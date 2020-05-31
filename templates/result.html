@@ -87,13 +87,13 @@
             </tbody>
           </table>
         </div>
-        <form action="{{ url_for('result')}}" method="post" style="margin-right: 0;">
-          <input type="hidden" name="selected_breed" value="{{selected_breed}}" />
-          <div class="ui labeled button" onclick="alert('added')">
-            <div class="ui red button"><i class="heart icon"></i>Love It</div>
-            <a class="ui basic red left pointing label">
-              0
-            </a>
+        <form action="{{ url_for('result')}}" method="post" style="margin-right: 0;">    
+          <input type="hidden" name="selected_breed" value="{{selected_breed}}">   
+          <input type="hidden" name="selected_image" value="{{image}}">   
+          <div class="ui labeled button" onclick="alert('added')">         
+            <button class="ui red button"><i class="heart icon"></i>Love It
+            <a class="ui basic red left pointing label">0</a>
+           </button>
           </div>
         </form>
       </div>

@@ -27,9 +27,9 @@ class Result(MethodView):
         """
         model = gbmodel.get_model()
         breed_name = request.form.get('selected_breed') 
+        breed_image = request.form.get('selected_image') 
         breeds, info, photo = api.info(breed_name)
         db_info = api.db_info(info, photo)
-        print(db_info)
         model.insert(db_info)
-        return render_template('result.html', selected_breed=breed_name, breeds=breeds, image=photo, selected_info=info)
+        return render_template('result.html', selected_breed=breed_name, breeds=breeds, image=breed_image, selected_info=info)
    
