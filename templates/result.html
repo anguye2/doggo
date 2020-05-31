@@ -1,0 +1,28 @@
+{% extends "layout.html" %} {% block content %}
+<h3>{{selected_breed}}</h3>
+<div class="recipe-card">
+  <form action="{{ url_for('result',selected_breed=selected_breed)}}" method="get">
+    <form style="display: inline;">
+      <div class="ui fluid search selection dropdown" id="dog-dropdown">
+        <input type="hidden" name="selected_breed" onchange="this.form.submit();"/>
+        <div class="default text">Select Dog</div>
+        <div class="menu">
+          {% for i, j in breeds.items() %}
+          <option class="item" value="{{i}}" name="selected_breed" data-count="{{loop.index}}">{{j}}</option>
+          {% endfor %}
+        </div>
+      </div>    
+    </form>
+    
+    <img class="header-img" src= {{image}} style="width: 50%;">
+    <p>Info: {{selected_info}}</p>
+
+    <form action="{{ url_for('result')}}" method='post'>
+      <input type="hidden" name="selected_breed" value="{{selected_breed}}">
+      <button class="my-btn" onclick="alert('added')">Love it</button>
+    </form>
+  </form> 
+</div>
+
+<a href="{{ url_for('index')}}"><button  class="my-btn">Back</button></a>
+{% endblock %}

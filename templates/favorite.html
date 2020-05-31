@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Your Fav</h3>
+	<a href="{{ url_for('index')}}"><button  class="my-btn" 
+		style="margin-bottom: 25px;">Back</button></a>
+    {% for i in favorite %}
+		<div class="foodcart-card">
+		<h4>{{ i.name }} </h4>
+		<img class="header-img" src= {{i.image}} style="width: 100%;">
+		<p>{{i.date_submitted}}</p>
+		<hr>
+		<p>Weight: {{i.weight}} </p>
+		<p>Height: {{i.height}} </p>
+		<p>Bred For: {{i.bred_for}}</p>
+		<p>Breed Group: {{i.breed_group}}</p>
+		<p>Life Span: {{i.life_span}}</p>
+		<p>Temperament: {{i.temperament}}</p>
+		<p>Origin: {{i.origin}}</p>
+		</div>
+	{% endfor %}
+<a href="{{ url_for('index')}}"><button  class="my-btn">Back</button></a>
+
+{% endblock %}

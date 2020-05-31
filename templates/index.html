@@ -1,0 +1,14 @@
+{% extends "layout.html" %} {% block content %}
+<div id="landing">
+  <h2 class="title">Just Dogs</h2>
+  <img id="background-img" src="{{url_for('static', filename='sofa.png')}}" />
+  <div class="btn-container">
+    <a href="/search">
+      <button class="ui button yellow basic">Search</button>
+    </a>
+    <a href="/favorite">
+      <div class="ui button yellow basic">Your Fav</div>
+    </a>
+  </div>
+</div>
+{% endblock %}
