@@ -105,9 +105,9 @@ input[type=textarea] {
     z-index: -1000;
 }
 
-body{
+/* body{
     overflow: hidden;
-}
+} */
 
 .page h2{
     font-family: 'Pacifico', cursive;
@@ -137,4 +137,34 @@ body{
 .btn-container .ui.button{
     width: 250px;
     margin-bottom: 20px;
+}
+
+.content .dog-img{
+    width: 100%;
+}
+
+.ui.card {
+    width: 500px !important;
+    margin: auto !important;
+}
+
+.content{
+    padding: 30px !important;
+}
+
+.ui.labeled.button{
+    float: right !important;
+}
+
+#title.ui.raised.segment{
+    width: 500px;
+    margin: auto;
+}
+
+h3{
+    font-size: 1.3em;
+}
+
+.page-header{
+    margin:25px;
 }
