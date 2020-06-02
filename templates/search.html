@@ -1,8 +1,8 @@
 {% extends "layout.html" %} {% block content %}
 <!-- Front end file where inputs of a food cart can be entered -->
-<h3>Goldens?</h3>
+<img id="background-img" class="search-background" src="{{url_for('static', filename='corgi.jpg')}}"/>
 <div class="recipe-card">
-  <form method="GET" action="{{ url_for('result',selected_breed=selected_breed)}}">
+  <form method="GET" action="{{ url_for('result',selected_breed=selected_breed)}}" style="margin-top: 50px;">
     <form style="display: inline;">
       <div class="ui fluid search selection dropdown" id="dog-dropdown">
         <input type="hidden" name="selected_breed" onchange="this.form.submit();"/>
@@ -16,5 +16,4 @@
     </form>
   </form>
 </div>
-<a href="{{ url_for('index')}}"><button  class="my-btn">Back</button></a>
 {% endblock %}

@@ -1,23 +1,52 @@
 {% extends "layout.html" %}
 {% block content %}
-<h3>Your Fav</h3>
-	<a href="{{ url_for('index')}}"><button  class="my-btn" 
-		style="margin-bottom: 25px;">Back</button></a>
+<h3 id="title" class="ui raised segment">Your Fav</h3>
     {% for i in favorite %}
-		<div class="foodcart-card">
-		<h4>{{ i.name }} </h4>
-		<img class="header-img" src= {{i.image}} style="width: 100%;">
-		<p>{{i.date_submitted}}</p>
-		<hr>
-		<p>Weight: {{i.weight}} </p>
-		<p>Height: {{i.height}} </p>
-		<p>Bred For: {{i.bred_for}}</p>
-		<p>Breed Group: {{i.breed_group}}</p>
-		<p>Life Span: {{i.life_span}}</p>
-		<p>Temperament: {{i.temperament}}</p>
-		<p>Origin: {{i.origin}}</p>
+		<div class="fav-card">
+			<div class="ui two column grid container">
+				<div class="column picture-container" style="display: flex; height: 400px; overflow:hidden;">
+				  <img class="dog-img" src="{{i.image}}" style="width: 90%; margin: auto;"/>
+				</div>
+				<div class="content column">
+				  <div class="description">
+					<h4>{{ i.name }}</h4>
+					<table class="ui very basic collapsing striped celled table">
+					  <tbody>
+						<tr>
+						  <td>Weight </td>
+						  <td>{{i.weight}} lbs.</td>
+						</tr>
+						<tr>
+						  <td>Height</td>
+						  <td>{{i.height}} in.</td>
+						</tr>
+						<tr>
+						  <td>Bred For: </td>
+						  <td>{{i.bred_for}}</td>
+						</tr>
+						<tr>
+						  <td>Breed Group: </td>
+						  <td>{{i.breed_group}}</td>
+						</tr>
+						<tr>
+						  <td>Life Span:</td>
+						  <td>{{i.life_span}} </td>
+						</tr>
+						<tr>
+						  <td>Temperament:  </td>
+						  <td>	{{i.temperament}}  </td>
+						</tr>
+						<tr>
+						  <td>Origin: </td>
+						  <td>{{i.origin}}</td>
+						</tr>
+					  </tbody>
+					</table>
+				  </div>
+				</div>
+			</div>
 		</div>
 	{% endfor %}
-<a href="{{ url_for('index')}}"><button  class="my-btn">Back</button></a>
+	<a class="back-btn" href="{{ url_for('index')}}"><button class="ui labeled icon button"><i class="caret square left outline icon"></i>Back</button></a>
 
 {% endblock %}
