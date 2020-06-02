@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
-<h3>Your Fav</h3>
-	<a href="{{ url_for('index')}}"><button  class="my-btn" 
-		style="margin-bottom: 25px;">Back</button></a>
+<h3 id="title" class="ui raised segment">Your Fav</h3>
     {% for i in favorite %}
 		<div class="foodcart-card">
 		<h4>{{ i.name }} </h4>
-		<img class="header-img" src= {{i.image}} style="width: 100%;">
+		<div style="display: flex; justify-content: center;">
+		<img class="header-img" src= {{i.image}} style="width: 80%;">
+		</div>
 		<p>{{i.date_submitted}}</p>
 		<hr>
 		<p>Weight: {{i.weight}} </p>
@@ -18,6 +18,6 @@
 		<p>Origin: {{i.origin}}</p>
 		</div>
 	{% endfor %}
-<a href="{{ url_for('index')}}"><button  class="my-btn">Back</button></a>
+	<a class="back-btn" href="{{ url_for('index')}}"><button class="ui labeled icon button"><i class="caret square left outline icon"></i>Back</button></a>
 
 {% endblock %}

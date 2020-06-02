@@ -1,9 +1,10 @@
 {% extends "layout.html" %} {% block content %}
 <div class="recipe-card">
-  <div class="page-header">
+  <div class="page-header result-header">
+  <img id="background-img" class="search-background result-background" src="{{url_for('static', filename='dogpaws.jpg')}}"/>
 <h3 id="title" class="ui raised segment">{{selected_breed}}</h3>
 
-  <form action="{{ url_for('result',selected_breed=selected_breed)}}" method="get">
+  <form action="{{ url_for('result',selected_breed=selected_breed)}}" class="dog-search-form"method="get">
     <form style="display: inline;">
       <div class="ui fluid search selection dropdown" id="dog-dropdown">
         <input type="hidden" name="selected_breed" onchange="this.form.submit();" />
@@ -18,12 +19,12 @@
       </div>
     </form>
   </div>
-    <div class="ui card">
-      <div class="image">
-        <img class="dog-img" src="{{image}}" />
+    <div class="ui two column grid container">
+      <div class="column picture-container" style="display: flex; height: 400px; overflow:hidden;">
+        <img class="dog-img" src="{{image}}" style="width: 90%; margin: auto;"/>
       </div>
       <!-- <p>Info: {{selected_info}}</p> -->
-      <div class="content">
+      <div class="content column">
         <div class="description">
           <h4>{{ selected_info.name }}</h4>
           <table class="ui very basic collapsing striped celled table">
@@ -92,8 +93,8 @@
           <input type="hidden" name="selected_image" value="{{image}}">   
           <div class="ui labeled button" onclick="alert('added')">         
             <button class="ui red button"><i class="heart icon"></i>Love It
+            </button>
             <a class="ui basic red left pointing label">0</a>
-           </button>
           </div>
         </form>
       </div>
@@ -101,5 +102,5 @@
   </form>
 </div>
 
-<a href="{{ url_for('index')}}"><button class="my-btn">Back</button></a>
+<a class="back-btn" href="{{ url_for('index')}}"><button class="ui labeled icon button"><i class="caret square left outline icon"></i>Back</button></a>
 {% endblock %}
