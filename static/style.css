@@ -199,6 +199,7 @@ button, input[type="submit"], input[type="reset"] {
 
 .result-background{
     opacity: 0.05;
+    height: 100vh;
 }
 
 #title{
