@@ -88,13 +88,18 @@
             </tbody>
           </table>
         </div>
-        <form action="{{ url_for('result')}}" method="post" style="margin-right: 0;">    
+        <!-- <form action="{{ url_for('result')}}" method="post" style="margin-right: 0;">     -->
+        <form action="" method="post" style="margin-right: 0;">    
           <input type="hidden" name="selected_breed" value="{{selected_breed}}">   
           <input type="hidden" name="selected_image" value="{{image}}">   
-          <div class="ui labeled button" onclick="alert('added')">         
+          <!-- <div class="ui labeled button" onclick="alert('added')">          -->
+            <div class="ui labeled button love-btn">
             <button class="ui red button"><i class="heart icon"></i>Love It
             </button>
             <a class="ui basic red left pointing label">0</a>
+          </div>
+          <div class="ui mini modal"> 
+            <h2>Saved</h2>
           </div>
         </form>
       </div>
