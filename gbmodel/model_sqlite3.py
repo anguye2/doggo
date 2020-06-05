@@ -29,8 +29,12 @@ class model(Model):
         """
         connection = sqlite3.connect(DB_FILE)
         cursor = connection.cursor()
-        cursor.execute("SELECT * FROM favorite")
-        return cursor.fetchall()
+        try:
+            cursor.execute("SELECT * FROM favorite")
+            return cursor.fetchall()
+        except OperationalError:
+            print("No existed database")
+            pass
     
     def insert(self, info):
         # id, name, weight, height, bred_for, breed_group, life_span, temperament, origin, image
